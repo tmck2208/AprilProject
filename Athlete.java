@@ -30,6 +30,20 @@ public class Athlete
   
   public String toString(){
     return name + ", " + heightMeters + " m";
+  }
+  public boolean equals(Object other){
+    if(this == other){
+      return true;
+    }
+    else if(other instanceof Athlete){
+      return false;
+    }
+    Athlete a = (Athlete)other;
+    if((name.equals(a.getName()))&&(heightMeters==a.getHeight())){
+      return true;
+    }
+    return false;
+  }
 }
 class SoccerPlayer extends Athlete
 {
