@@ -69,7 +69,10 @@ class SoccerPlayer extends Athlete
     else if(i%2==0){
       return "Midfielder";
     }
-    return "Forward";
+    else if(i<=11){
+      return "Forward";
+    }
+    return "Bench";
   }
   public String toString(){
     return super.toString() + "\nNumber: " + number;
