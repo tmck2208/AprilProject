@@ -28,7 +28,8 @@ public class Athlete
     heightMeters = h;
   }
   
-  public
+  public String toString(){
+    return name + ", " + heightMeters + " m";
 }
 class SoccerPlayer extends Athlete
 {
@@ -69,6 +70,10 @@ class SoccerPlayer extends Athlete
       return "Midfielder";
     }
     return "Forward";
+  }
+  public String toString(){
+    return super.toString() + "\nNumber: " + number;
+  }
 }
 class Messi extends SoccerPlayer
 {
@@ -90,6 +95,12 @@ class Messi extends SoccerPlayer
     balonDors = b;
   }
 
+  public String whatFoot(){
+    return "left";
+  }
+  public String position(){
+    return "Forward";
+  }
   public boolean hasWorldCup(){
     if(balonDors>=8){
       return true;
@@ -106,6 +117,9 @@ class Messi extends SoccerPlayer
     else{
       return "Inter Miami";
     }
+  }
+  public String toString(){
+    return super.toString() + "\n" + balonDors + " Balon D'Ors";
   }
 }
 class Tester
