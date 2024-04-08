@@ -72,32 +72,10 @@ class SoccerPlayer extends Athlete
     number = n;
   }
 
-  public String whatFoot(){
-    int i = (int)(Math.random()*10)+1;
-    if(i==1){
-      return "left";
-    }
-    return "right";
-  }
-  public String position(){
-    if(number==1){
-      return "Goalkeeper";
-    }
-    else if(number<=5){
-      return "Defender";
-    }
-    else if((number%2==0)&&(number<=11)){
-      return "Midfielder";
-    }
-    else if(number<=11){
-      return "Forward";
-    }
-    return "Bench";
-  }
   public String playGame(){
       String s = super.playGame();
       int i = (int)(Math.random()*4);
-      return s + "and " + i + " goals";
+      return s + " and got " + i + " goals";
   }
 
   public String toString(){
@@ -137,29 +115,6 @@ class Messi extends SoccerPlayer
     balonDors = b;
   }
 
-  public String whatFoot(){
-    return "left";
-  }
-  public String position(){
-    return "Forward";
-  }
-  public boolean hasWorldCup(){
-    if(balonDors>=8){
-      return true;
-    }
-    return false;
-  }
-  public String whatClub(){
-    if(balonDors<=6){
-      return "Barcelona";
-    }
-    else if(balonDors==7){
-      return "PSG";
-    }
-    else{
-      return "Inter Miami";
-    }
-  }
   public String playGame(){
       return super.playGame() + "\nAnkara Messi";
   }
@@ -208,5 +163,10 @@ public class Tester
       for(int i = 0; i<athleteList.size(); i++){
           System.out.println(athleteList.get(i));
       }
+      for(int i = 0; i<athleteList.size(); i++){
+          System.out.println((athleteList.get(i)).playGame());
+      }
+      System.out.println(mJ.equals(mJ2));
+      System.out.println(messi1.equals(messi2));
   }
 }
