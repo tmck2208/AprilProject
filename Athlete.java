@@ -215,5 +215,11 @@ public class Tester
       }
       System.out.println(mJ.equals(mJ2));
       System.out.println(messi1.equals(messi2));
+      System.out.println(((SoccerPlayer)soccerPlayer).whatFoot());
+      System.out.println(((Messi)messi1).whatFoot());
+      System.out.println(((SoccerPlayer)haaland).position());
+      System.out.println(((Messi)messi2).position());
+      System.out.println(((Messi)messi2).whatClub());
+      System.out.println(((Messi)messi1).hasWorldCup());
   }
 }
