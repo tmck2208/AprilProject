@@ -80,17 +80,16 @@ class SoccerPlayer extends Athlete
     return "right";
   }
   public String position(){
-    int i = (int)(Math.random()*11)+1;
-    if(i==1){
+    if(number==1){
       return "Goalkeeper";
     }
-    else if(i<=5){
+    else if(number<=5){
       return "Defender";
     }
-    else if(i%2==0){
+    else if((number%2==0)&&(number<=11)){
       return "Midfielder";
     }
-    else if(i<=11){
+    else if(number<=11){
       return "Forward";
     }
     return "Bench";
