@@ -91,6 +91,19 @@ class SoccerPlayer extends Athlete
   public String toString(){
     return super.toString() + "\nNumber: " + number;
   }
+  public boolean equals(Object other){
+    if(this == other){
+      return true;
+    }
+    else if(other instanceof SoccerPlayer){
+      return false;
+    }
+    SoccerPlayer a = (SoccerPlayer)other;
+    if((super.equals(a))&&(number==a.getNumber())){
+      return true;
+    }
+    return false;
+  }
 }
 class Messi extends SoccerPlayer
 {
@@ -137,6 +150,19 @@ class Messi extends SoccerPlayer
   }
   public String toString(){
     return super.toString() + "\n" + balonDors + " Balon D'Ors";
+  }
+  public boolean equals(Object other){
+    if(this == other){
+      return true;
+    }
+    else if(other instanceof Messi){
+      return false;
+    }
+    Messi a = (Messi)other;
+    if((super.equals(a))&&(balonDors==a.getBalonDors())){
+      return true;
+    }
+    return false;
   }
 }
 class Tester
