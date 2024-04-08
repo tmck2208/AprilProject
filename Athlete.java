@@ -138,6 +138,30 @@ class Messi extends SoccerPlayer
     balonDors = b;
   }
 
+    public String whatFoot(){
+    return "left";
+  }
+  public String position(){
+    return "Forward";
+  }
+  public boolean hasWorldCup(){
+    if(balonDors>=8){
+      return true;
+    }
+    return false;
+  }
+  public String whatClub(){
+    if(balonDors<=6){
+      return "Barcelona";
+    }
+    else if(balonDors==7){
+      return "PSG";
+    }
+    else{
+      return "Inter Miami";
+    }
+  }
+
   public String playGame(){
       return super.playGame() + "\nAnkara Messi";
   }
