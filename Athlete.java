@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Athlete
+class Athlete
 {
   private String name;
   private double heightMeters;
@@ -11,7 +11,7 @@ public class Athlete
   }
   public Athlete(String n, double h){
     name = n;
-    height = h;
+    heightMeters = h;
   }
   
   public String getName(){
@@ -26,6 +26,13 @@ public class Athlete
   }
   public void setHeight(Double h){
     heightMeters = h;
+  }
+
+  public String playGame(){
+    if((int)(Math.random()*2)==0){
+        return "You won";
+    }
+    return "You Lost";
   }
   
   public String toString(){
@@ -52,9 +59,9 @@ class SoccerPlayer extends Athlete
     super();
     number = 0;
   }
-  public SoccerPlayer(String n, double h, number n){
+  public SoccerPlayer(String n, double h, int a){
     super(n,h);
-    number = n;
+    number = a;
   }
   
   public int getNumber(){
@@ -88,6 +95,12 @@ class SoccerPlayer extends Athlete
     }
     return "Bench";
   }
+  public String playGame(){
+      String s = super.playGame();
+      int i = (int)(Math.random()*4);
+      return s + "and " + i + " goals";
+  }
+
   public String toString(){
     return super.toString() + "\nNumber: " + number;
   }
@@ -148,6 +161,10 @@ class Messi extends SoccerPlayer
       return "Inter Miami";
     }
   }
+  public String playGame(){
+      return super.playGame() + "\nAnkara Messi";
+  }
+
   public String toString(){
     return super.toString() + "\n" + balonDors + " Balon D'Ors";
   }
@@ -165,8 +182,32 @@ class Messi extends SoccerPlayer
     return false;
   }
 }
-class Tester
+public class Tester
 {
   public static void main(String[] args){
+      ArrayList<Athlete> athleteList = new ArrayList<Athlete>();
+      Athlete mJ = new Athlete("Michael Jordan", 1.98);
+      Athlete mJ2 = mJ;
+      Athlete kawhi = new Athlete("Kawhi Leonard", 2.01);
+      Athlete mP = new Athlete("Michael Phelps", 1.98);
+      Athlete athlete = new Athlete();
+      Athlete soccerPlayer = new SoccerPlayer();
+      Athlete haaland = new SoccerPlayer("Erling Haaland", 1.94, 9);
+      Athlete ronaldo = new SoccerPlayer("Ronaldo", 1.87, 7);
+      Athlete messi1 = new Messi();
+      Athlete messi2 = new Messi(8);
+      athleteList.add(mJ);
+      athleteList.add(mJ2);
+      athleteList.add(kawhi);
+      athleteList.add(mP);
+      athleteList.add(athlete);
+      athleteList.add(soccerPlayer);
+      athleteList.add(haaland);
+      athleteList.add(ronaldo);
+      athleteList.add(messi1);
+      athleteList.add(messi2);
+      for(int i = 0; i<athleteList.size(); i++){
+          System.out.println(athleteList.get(i));
+      }
   }
 }
